@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Market Pulse</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <h1>MARKET PULSE</h1>
+    </header>
+
+    <nav>
+        <a href="/">Score</a>
+        <a href="/mercados">Mercados</a>
+        <a href="/metodologia">Metodologia</a>
+    </nav>
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+
+<footer>
+    Elaborado por Arthur Di Doné
+</footer>
+</body>
+
+</html>

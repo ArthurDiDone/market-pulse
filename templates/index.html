@@ -1,0 +1,142 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>Mercados</h2>
+<p>Visão Geral dos Mercados Globais</p>
+
+<p class="score-update">
+    Última atualização: {{ ultima_atualizacao }}
+</p>
+
+<div class="market-grid">
+
+    <div class="card">
+    <h3>Bolsas</h3>
+
+    <div class="market-header">
+        <span>Ativo</span>
+        <span>Preço</span>
+        <span>Var. dia</span>
+    </div>
+
+    {% for ativo in resultado %}
+
+        {% if ativo["grupo"] == "Bolsas" %}
+        <div class="market-row">
+            <span>{{ ativo["nome"] }}</span>
+            <span>{{ "%.2f"|format(ativo["preco"]) }}</span>
+            <span>
+                {% if ativo["variacao"] > 0 %}
+                    <span class="signal positive"></span>
+                    +{{ "%.2f"|format(ativo["variacao"]) }}%
+                {% elif ativo["variacao"] < 0 %}
+                    <span class="signal negative"></span>
+                    {{ "%.2f"|format(ativo["variacao"]) }}%
+                {% else %}
+                    <span class="signal neutral"></span>
+                    {{ "%.2f"|format(ativo["variacao"]) }}%
+                {% endif %}
+            </span>
+        </div>
+        {% endif %}
+    {% endfor %}
+    </div>
+
+    <div class="card">
+    <h3>Commodities</h3>
+
+    <div class="market-header">
+        <span>Ativo</span>
+        <span>Preço</span>
+        <span>Var. dia</span>
+    </div>
+
+    {% for ativo in resultado %}
+
+        {% if ativo["grupo"] == "Commodities" %}
+        <div class="market-row">
+            <span>{{ ativo["nome"] }}</span>
+            <span>{{ "%.2f"|format(ativo["preco"]) }}</span>
+            <span> 
+                {% if ativo["variacao"] > 0 %}
+                    <span class="signal positive"></span>
+                    +{{ "%.2f"|format(ativo["variacao"]) }}%
+                {% elif ativo["variacao"] < 0 %}
+                    <span class="signal negative"></span>
+                    {{ "%.2f"|format(ativo["variacao"]) }}%
+                {% else %}
+                    <span class="signal neutral"></span>
+                    {{ "%.2f"|format(ativo["variacao"]) }}%
+                {% endif %}
+            </span>
+        </div>
+        {% endif %}
+    {% endfor %}
+    </div>
+
+    <div class="card">
+    <h3>Cripto</h3>
+
+    <div class="market-header">
+        <span>Ativo</span>
+        <span>Preço</span>
+        <span>Var. dia</span>
+    </div>
+
+    {% for ativo in resultado %}
+
+        {% if ativo["grupo"] == "Cripto" %}
+        <div class="market-row">
+            <span>{{ ativo["nome"] }}</span>
+            <span>{{ "%.2f"|format(ativo["preco"]) }}</span>
+            <span> 
+                {% if ativo["variacao"] > 0 %}
+                    <span class="signal positive"></span>
+                    +{{ "%.2f"|format(ativo["variacao"]) }}%
+                {% elif ativo["variacao"] < 0 %}
+                    <span class="signal negative"></span>
+                    {{ "%.2f"|format(ativo["variacao"]) }}%
+                {% else %}
+                    <span class="signal neutral"></span>
+                    {{ "%.2f"|format(ativo["variacao"]) }}%
+                {% endif %}
+            </span>
+        </div>
+        {% endif %}
+    {% endfor %}
+    </div>
+
+    <div class="card">
+    <h3>Risco</h3>
+
+    <div class="market-header">
+        <span>Ativo</span>
+        <span>Preço</span>
+        <span>Var. dia</span>
+    </div>
+
+    {% for ativo in resultado %}
+
+        {% if ativo["grupo"] == "Risco" %}
+        <div class="market-row">
+            <span>{{ ativo["nome"] }}</span>
+            <span>{{ "%.2f"|format(ativo["preco"]) }}</span>
+            <span> 
+                {% if ativo["variacao"] > 0 %}
+                    <span class="signal positive"></span>
+                    +{{ "%.2f"|format(ativo["variacao"]) }}%
+                {% elif ativo["variacao"] < 0 %}
+                    <span class="signal negative"></span>
+                    {{ "%.2f"|format(ativo["variacao"]) }}%
+                {% else %}
+                    <span class="signal neutral"></span>
+                    {{ "%.2f"|format(ativo["variacao"]) }}%
+                {% endif %}
+            </span>
+        </div>
+        {% endif %}
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,190 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="page-header">
+    <h1>Metodologia</h1>
+    <p>
+        Como o Market Pulse transforma dados de mercado em uma leitura
+        do ambiente global?
+    </p>
+</div>
+
+
+<div class="card">
+
+    <h2>1. Score de Bolsas</h2>
+
+    <p>
+        O Score de Bolsas é a espinha dorsal do Market Pulse.
+        Ele acompanha 13 índices acionários de diferentes regiões
+        do mundo e atribui 1 ponto para cada índice que apresenta
+        variação positiva no dia.
+    </p>
+
+    <p>
+        O resultado varia de 0 a 13 pontos e representa a amplitude
+        do movimento positivo entre os mercados acompanhados.
+    </p>
+
+</div>
+
+
+<div class="card">
+
+    <h2>2. Regime de mercado</h2>
+
+    <p>
+        A partir do Score de Bolsas, o Market Pulse classifica o
+        ambiente de mercado em cinco faixas:
+    </p>
+
+    <div class="methodology-table">
+
+        <div class="methodology-row">
+            <span>0–2</span>
+            <span>Forte Risk-off</span>
+        </div>
+
+        <div class="methodology-row">
+            <span>3–5</span>
+            <span>Moderado Risk-off</span>
+        </div>
+
+        <div class="methodology-row">
+            <span>6–8</span>
+            <span>Neutro</span>
+        </div>
+
+        <div class="methodology-row">
+            <span>9–10</span>
+            <span>Moderado Risk-on</span>
+        </div>
+
+        <div class="methodology-row">
+            <span>11–13</span>
+            <span>Forte Risk-on</span>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="card">
+
+    <h2>3. Indicadores de confirmação</h2>
+
+    <p>
+        O Score de Bolsas define o regime principal. Outros indicadores
+        são utilizados para identificar confirmações ou divergências
+        em relação a esse regime.
+    </p>
+
+    <div class="methodology-item">
+        <strong>VIX</strong>
+        <span>Volatilidade implícita do S&amp;P 500.</span>
+    </div>
+
+    <div class="methodology-item">
+        <strong>DXY</strong>
+        <span>Força relativa do dólar americano.</span>
+    </div>
+
+    <div class="methodology-item">
+        <strong>Ouro</strong>
+        <span>Indicador associado à busca por proteção.</span>
+    </div>
+
+    <div class="methodology-item">
+        <strong>Cobre</strong>
+        <span>Indicador associado à atividade e crescimento.</span>
+    </div>
+
+    <div class="methodology-item">
+        <strong>Prata</strong>
+        <span>Indicador complementar de crescimento e metais.</span>
+    </div>
+
+    <div class="methodology-item">
+        <strong>Energia</strong>
+        <span>Movimento do WTI e do Brent.</span>
+    </div>
+
+    <div class="methodology-item">
+        <strong>Bitcoin</strong>
+        <span>Indicador complementar de apetite por risco.</span>
+    </div>
+
+</div>
+
+
+<div class="card">
+
+    <h2>4. Divergências</h2>
+
+    <p>
+        Uma divergência ocorre quando um indicador apresenta um
+        comportamento contrário ao esperado para o regime identificado
+        pelas bolsas.
+    </p>
+
+    <p>
+        Uma divergência isolada pode representar apenas ruído de curto
+        prazo. Por isso, o diagnóstico considera o conjunto dos sinais.
+    </p>
+
+</div>
+
+
+<div class="card">
+
+    <h2>5. Diagnóstico final</h2>
+
+    <p>
+        O diagnóstico combina o regime das bolsas com as divergências
+        identificadas nos demais indicadores.
+    </p>
+
+    <div class="methodology-table">
+
+        <div class="methodology-row">
+            <span>Risk-on</span>
+            <span>Até 1 divergência</span>
+        </div>
+
+        <div class="methodology-row">
+            <span>Risk-on com cautela</span>
+            <span>2 ou mais divergências</span>
+        </div>
+
+        <div class="methodology-row">
+            <span>Neutro / sinais mistos</span>
+            <span>Regime neutro</span>
+        </div>
+
+        <div class="methodology-row">
+            <span>Risk-off</span>
+            <span>Até 1 divergência</span>
+        </div>
+
+        <div class="methodology-row">
+            <span>Risk-off com sinais de reversão</span>
+            <span>2 ou mais divergências</span>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="methodology-note">
+
+    <strong>Nota:</strong>
+    O Market Pulse é uma ferramenta de leitura e organização
+    de informações de mercado. Seus indicadores e classificações
+    não constituem recomendação de investimento.
+
+</div>
+
+{% endblock %}

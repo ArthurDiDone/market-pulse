@@ -1,0 +1,332 @@
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #111827;
+        color: #f3f4f6;
+        margin: 0;
+    }
+
+    footer {
+        text-align: center;
+        color: #64748b;
+        font-size: 12px;
+        padding: 30px 0;
+    }
+
+    header {
+        background-color: #0f172a;
+        padding: 20px 40px;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+
+    nav {
+        background-color: #1e293b;
+        padding: 12px 40px;
+    }
+
+    nav a {
+        color: #cbd5e1;
+        text-decoration: none;
+        margin-right: 25px;
+    }
+
+    nav a:hover {
+        color: white;
+    }
+
+    main {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+
+    .card {
+        background-color: #1e293b;
+        border-radius: 10px;
+        padding: 25px;
+        margin-bottom: 20px;
+    }
+
+    .card h3 {
+        margin-top: 0;
+        color: #94a3b8;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .market-header {
+        display: grid;
+        grid-template-columns: 1fr auto auto;
+        gap: 20px;
+        padding: 8px 0;
+        margin-bottom: 5px;
+        color: #64748b;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        border-bottom: 1px solid #475569;
+    }
+
+    .market-header span:nth-child(2),
+    .market-header span:nth-child(3) {
+        text-align: right;
+        min-width: 70px;
+    }
+
+    .market-row {
+        display: grid;
+        grid-template-columns: 1fr auto auto;
+        gap: 20px;
+        padding: 13px 0;
+        border-bottom: 1px solid #334155;
+    }
+
+    .market-row:last-child {
+        border-bottom: none;
+    }
+
+    .market-row span:nth-child(2),
+    .market-row span:nth-child(3) {
+        text-align: right;
+        min-width: 70px;
+    }
+
+    .score-hero {
+        background: #1e293b;
+        border-radius: 12px;
+        padding: 30px;
+        margin-bottom: 24px;
+        text-align: center;
+    }
+
+    .score-label {
+        font-size: 12px;
+        letter-spacing: 2px;
+        color: #94a3b8;
+        margin-bottom: 10px;
+    }
+
+    .score-hero h2 {
+        font-size: 32px;
+        margin: 10px 0;
+    }
+
+    .score-main {
+        font-size: 16px;
+        color: #cbd5e1;
+        margin-top: 8px;
+    }
+
+    .score-detail {
+        font-size: 14px;
+        color: #94a3b8;
+        margin-top: 16px;
+    }
+
+    .score-hero.risk-on {
+        border-left: 5px solid #22c55e;
+    }
+
+    .score-hero.risk-on-cautela {
+        border-left: 5px solid #eab308;
+    }
+
+    .score-hero.neutro {
+        border-left: 5px solid #94a3b8;
+    }
+
+    .score-hero.risk-off {
+        border-left: 5px solid #ef4444;
+    }
+
+    .score-hero.risk-off-reversao {
+        border-left: 5px solid #f97316;
+    }
+
+    .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .score-number {
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    .score-bar {
+        width: 100%;
+        height: 8px;
+        background: #334155;
+        border-radius: 4px;
+        overflow: hidden;
+        margin: 18px 0 12px;
+    }
+
+    .score-bar-fill {
+        height: 100%;
+        background: #22c55e;
+        border-radius: 4px;
+    }
+
+    .score-description {
+        color: #cbd5e1;
+        margin: 0;
+    }
+
+    .commodity-group {
+       margin-top: 18px;
+    }
+
+    .commodity-label {
+        display: block;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #94a3b8;
+        margin-bottom: 6px;
+    }
+
+    .commodity-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 7px 0;
+        border-bottom: 1px solid #334155;
+    }
+
+    .commodity-row:last-child {
+        border-bottom: none;
+    }
+
+    .btc-direction {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 16px;
+        margin-top: 20px;
+    }
+
+    .direction {
+        font-size: 18px;
+        font-weight: bold;
+        margin-left: 8px;
+    }
+
+    .vix-value {
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    .indicator-level {
+        color: #cbd5e1;
+        margin: 18px 0 10px;
+    }
+
+    .indicator-direction {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 16px;
+    }
+
+    .indicator-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        margin-bottom: 24px;
+    }
+
+    .positive {
+        color: #22c55e;
+    }
+
+    .negative {
+        color: #ef4444;
+    }
+
+    .neutral {
+        color: #94a3b8;
+    }
+
+    .signal {
+        display: inline-flex;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+
+    .signal.positive {
+        background-color: #22c55e;
+    }
+
+    .signal.negative {
+        background-color: #ef4444;
+    }
+
+    .signal.neutral {
+        background-color: #94a3b8;
+    }
+
+    .page-header {
+        margin-bottom: 24px;
+    }
+
+    .page-header h1 {
+        margin-bottom: 8px;
+    }
+
+    .page-header p {
+        color: #94a3b8;
+    }
+
+    .methodology-table {
+        margin-top: 20px;
+    }
+
+    .methodology-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 12px 0;
+        border-bottom: 1px solid #334155;
+    }
+
+    .methodology-row:last-child {
+        border-bottom: none;
+    }
+
+    .methodology-item {
+        display: flex;
+        gap: 12px;
+        padding: 10px 0;
+        border-bottom: 1px solid #334155;
+    }
+
+    .methodology-item:last-child {
+        border-bottom: none;
+    }
+
+    .methodology-item strong {
+        min-width: 100px;
+    }
+
+    .methodology-item span {
+        color: #cbd5e1;
+    }
+
+    .methodology-note {
+        color: #94a3b8;
+        font-size: 13px;
+        margin-top: 24px;
+        padding: 0 4px;
+    }
+
+    .score-update {
+        font-size: 12px;
+        color: #64748b;
+        margin-top: 8px;
+    }

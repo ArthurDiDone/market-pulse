@@ -1,0 +1,247 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <div class="score-hero
+        {% if diagnostico["diagnostico"] == "Risk-on" %}
+            risk-on
+        {% elif diagnostico["diagnostico"] == "Risk-on com cautela" %}
+            risk-on-cautela
+        {% elif diagnostico["diagnostico"] == "Neutro / sinais mistos" %}
+            neutro
+        {% elif diagnostico["diagnostico"] == "Risk-off" %}
+            risk-off
+        {% elif diagnostico["diagnostico"] == "Risk-off com sinais de reversão" %}
+            risk-off-reversao
+        {% endif %}
+        ">
+
+    <p class="score-label">MARKET PULSE</p>
+
+    <h2>{{ diagnostico["diagnostico"] }}</h2>
+
+    <div class="score-main">
+        {{ diagnostico["regime"] }}
+    </div>
+
+    <p class="score-detail">
+        {{ diagnostico["divergencias"] }} divergência(s) identificada(s)
+    </p>
+
+    <p class="score-update">
+        Última atualização: {{ ultima_atualizacao }}
+    </p>
+
+</div>
+
+
+<div class="card score-bolsas">
+
+    <div class="card-header">
+        <h3>Bolsas</h3>
+        <span class="score-number">
+            {{ score["bolsas"] }}/13
+        </span>
+    </div>
+
+    <div class="score-bar">
+        <div class="score-bar-fill"style="width: {{ (score['bolsas'] / 13) * 100 }}%;">
+        </div>
+    </div>
+
+    <p class="score-description">
+
+        {% if score["bolsas"] <= 2 %}
+            Forte risk-off
+
+        {% elif score["bolsas"] <= 5 %}
+            Moderado risk-off
+
+        {% elif score["bolsas"] <= 8 %}
+            Mercados neutros
+
+        {% elif score["bolsas"] <= 10 %}
+            Moderado risk-on
+
+        {% else %}
+            Forte risk-on
+        {% endif %}
+
+    </p>
+
+</div>
+
+<div class="indicator-grid">
+
+<div class="card">
+
+    <h3>Commodities</h3>
+
+    <div class="commodity-group">
+        <span class="commodity-label">Proteção</span>
+
+        <div class="commodity-row">
+            <span>Ouro</span>
+            <span>
+                {% if score["ouro"]["direcao"] == "Crescente" %}
+            <span class="direction positive">↑</span>
+                {% elif score["ouro"]["direcao"] == "Decrescente" %}
+            <span class="direction negative">↓</span>
+                {% else %}
+            <span class="direction neutral">→</span>
+                {% endif %}
+            </span>
+        </div>
+    </div>
+
+    <div class="commodity-group">
+        <span class="commodity-label">Crescimento</span>
+
+        <div class="commodity-row">
+            <span>Cobre</span>
+            <span>
+                {% if score["cobre"]["direcao"] == "Crescente" %}
+            <span class="direction positive">↑</span>
+                {% elif score["cobre"]["direcao"] == "Decrescente" %}
+            <span class="direction negative">↓</span>
+                {% else %}
+            <span class="direction neutral">→</span>
+                {% endif %}
+            </span>
+        </div>
+
+        <div class="commodity-row">
+            <span>Prata</span>
+            <span>
+                {% if score["prata"]["direcao"] == "Crescente" %}
+            <span class="direction positive">↑</span>
+                {% elif score["prata"]["direcao"] == "Decrescente" %}
+            <span class="direction negative">↓</span>
+                {% else %}
+            <span class="direction neutral">→</span>
+                {% endif %}
+            </span>
+        </div>
+    </div>
+
+    <div class="commodity-group">
+        <span class="commodity-label">Energia</span>
+
+        <div class="commodity-row">
+            <span>WTI</span>
+            <span>
+                {% if score["wti"]["direcao"] == "Crescente" %}
+            <span class="direction positive">↑</span>
+                {% elif score["wti"]["direcao"] == "Decrescente" %}
+            <span class="direction negative">↓</span>
+                {% else %}
+            <span class="direction neutral">→</span>
+                {% endif %}
+            </span>
+        </div>
+
+        <div class="commodity-row">
+            <span>Brent</span>
+            <span>
+                {% if score["brent"]["direcao"] == "Crescente" %}
+            <span class="direction positive">↑</span>
+                {% elif score["brent"]["direcao"] == "Decrescente" %}
+            <span class="direction negative">↓</span>
+                {% else %}
+            <span class="direction neutral">→</span>
+                {% endif %}
+            </span>
+        </div>
+    </div>
+
+</div>
+
+<div class="card">
+
+    <h3>Bitcoin</h3>
+
+    <div class="btc-direction">
+        {% if score["btc"] == 1 %}
+            <span class="direction positive">↑</span>
+            <span>Crescente</span>
+        {% else %}
+            <span class="direction negative">↓</span>
+            <span>Decrescente</span>
+        {% endif %}
+    </div>
+
+</div>
+
+</div>
+
+<div class="indicator-grid">
+
+    <div class="card">
+
+        <div class="card-header">
+            <h3>VIX</h3>
+            <span class="vix-value">
+                {{ "%.2f"|format(score["vix"]["valor"]) }}
+            </span>
+        </div>
+
+        <p class="indicator-level">
+            {{ score["vix"]["nivel"] }}
+        </p>
+
+        <div class="indicator-direction">
+
+            {% if score["vix"]["direcao"] == "Crescente" %}
+                <span class="direction negative">↑</span>
+                <span>Crescente</span>
+
+            {% elif score["vix"]["direcao"] == "Decrescente" %}
+                <span class="direction positive">↓</span>
+                <span>Decrescente</span>
+
+            {% else %}
+                <span class="direction neutral">→</span>
+                <span>Estável</span>
+            {% endif %}
+
+        </div>
+
+    </div>
+
+
+
+    <div class="card">
+
+        <div class="card-header">
+            <h3>DXY</h3>
+            <span class="vix-value">
+                {{ "%.2f"|format(score["dxy"]["valor"]) }}
+            </span>
+        </div>
+
+        <p class="indicator-level">
+            {{ score["dxy"]["intensidade"] }}
+        </p>
+
+        <div class="indicator-direction">
+
+            {% if score["dxy"]["direcao"] == "Crescente" %}
+                <span class="direction negative">↑</span>
+                <span>Crescente</span>
+
+            {% elif score["dxy"]["direcao"] == "Decrescente" %}
+                <span class="direction positive">↓</span>
+                <span>Decrescente</span>
+
+            {% else %}
+                <span class="direction neutral">→</span>
+                <span>Estável</span>
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
