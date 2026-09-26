@@ -51,3 +51,5 @@ def metodologia():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+# AI assistance: ChatGPT was used as a helper during development for debugging, code explanations, and implementation guidance.

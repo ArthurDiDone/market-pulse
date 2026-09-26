@@ -157,3 +157,5 @@ for ativo in resultado["dados"]:
         f"{ativo['preco']:>12.2f}" 
         f"{ativo['variacao']:>10.2f}%"
     )
+
+        # AI assistance: ChatGPT was used as a helper during development for debugging, code explanations, and implementation guidance.

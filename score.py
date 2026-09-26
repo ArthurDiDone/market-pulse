@@ -174,3 +174,5 @@ def calcular_scores(resultado):
             "direcao": direcao_brent
         }
     }        
+
+        # AI assistance: ChatGPT was used as a helper during development for debugging, code explanations, and implementation guidance.

@@ -96,3 +96,5 @@ def gerar_diagnostico(score):
         "divergencias": divergencias,
         "diagnostico": diagnostico
     }
+
+        # AI assistance: ChatGPT was used as a helper during development for debugging, code explanations, and implementation guidance.
